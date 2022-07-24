@@ -1,0 +1,198 @@
+body{
+    background:rgba(49, 51, 73, 1);
+}
+
+.gallery {
+    margin: 0 auto;
+    margin-left:200px;
+    background: rgba(49, 51, 73, 1);
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto, 1fr);
+    grid-gap: 1rem;
+}
+  
+.gallery-image img 
+    {
+        width: 100%;
+        height: auto;
+    }
+  
+  
+.gallery-image
+    {
+        margin: 1rem 0;
+        font-family: Helvetica, Sans-Serif;;
+        margin: 0;
+        display: flex;
+        flex-flow: column;
+        flex-wrap: wrap;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.8);
+    }
+  
+@media screen and (min-width: 1200px) {
+   .gallery 
+        {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        grid-gap: 1rem;
+        display: grid;
+        padding: 1rem;         
+        }
+               
+    }
+
+.title{
+    display:flex;
+    margin-left:200px;
+    justify-content: center;
+}
+
+.title h1{
+    font-family: Helvetica, Sans-Serif;;
+    color:white;
+}
+
+/* from w3 schools: https://www.w3schools.com/howto/howto_css_modals.asp */
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    margin-left:100px;
+}
+  
+  /* Modal Content/Box */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 3rem auto; 
+    padding: 20px;
+    border: 1rem solid rgb(32, 32, 39);
+    width: 50%; 
+    font-family: Helvetica, Sans-Serif;;
+}
+.modal-content img{
+    width: 100%;
+}
+
+/*https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
+https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+*/
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; 
+    width: 200px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: rgb(32, 32, 39); 
+    overflow-x: hidden; 
+    padding-top: 20px;
+    font-family: Helvetica, Sans-Serif;;
+  }
+  
+
+  .isHighlight{
+    
+    text-decoration: none;
+    font-size: 1rem;
+    color: #818181;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  .isHighlight input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+ 
+
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    margin-left: 5px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .isHighlight:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .isHighlight input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+ 
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .isHighlight input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  
+  /* Style the checkmark/indicator */
+  .isHighlight .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .isHighlight label:hover{
+    color: #f1f1f1;
+  }
+
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: flex;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav label:hover {
+    color: #f1f1f1;
+    cursor:pointer;
+  }
+  
+ 
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav label {font-size: 18px;}
+  }
